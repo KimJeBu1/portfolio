@@ -28,6 +28,27 @@
   --weight-regular: 400;
 }
 
+/* Size */
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 /* Typography */
 
 h1 {
@@ -56,4 +77,20 @@ p {
   font-weight: var(--weight-regular);
   color: var(--color-black);
   margin: 4px 0;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-pink);
+  align-items: center;
+}
+
+.navbar_menu {
+  display: flex;
+}
+
+.navabr_menu_item {
+  padding: 8px 12px;
 }
