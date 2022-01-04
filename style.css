@@ -397,6 +397,8 @@ p {
 .testimonial {
   display: flex;
   margin: 32px;
+  /* 내가 추가함 원본소스랑 비교해볼것 */
+  justify-content: center;
 }
 
 .testimonial_avatar {
