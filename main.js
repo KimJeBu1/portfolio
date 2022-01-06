@@ -29,6 +29,15 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact')
 })
 
+//Make home slowly fade to transparent as window scrolls down
+const home = document.querySelector('.home_container');//querySelector로 home의 정보를 가져온다.
+//.home_container에 넣으면 배경 빼고 contents만 scroll 내릴수록 희미해짐
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+})
+
+
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
