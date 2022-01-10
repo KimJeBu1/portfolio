@@ -53,7 +53,44 @@ arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
 
+// Project
+const workBtnContainer = document.querySelector('.work_categories');
+const projectContainer = document.querySelector('.work_projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null) {
+        return;
+    }
+    projectContainer.classList.add('anim-out');  
+    // console.log(filter); 
+        setTimeout(() => {
+            projects.forEach((project) => {
+                console.log(project.dataset.type);
+                if (filter === '*' || filter === project.dataset.type) {
+                    project.classList.remove('invisible');
+                } else {
+                    project.classList.add('invisible');
+                }
+            });
+            projectContainer.classList.remove('anim-out');
+        }, 300);
+    });
+//     console.log('--------------'); // forEach와 같은 방법임
+//     for( let project of projects) {
+//         console.log(project);
+//     }
+    
+//     console.log('--------------');
+//     let project;
+//     for(let i = 0; i < projects.length ; i++){
+//         project = projects[i];
+//         console.log(project);
+//     }
+
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+

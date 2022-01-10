@@ -191,21 +191,24 @@
       <h1>My work</h1>
     <h3>Project</h3>
     <div class="work_categories">
-      <button class="category_btn active">
-        All<span class="category_count">8</span>
+      <button class="category_btn active" data-filter="*">
+        All<span class="category_count">4</span>
       </button>
-      <button class="category_btn">
-        Frondt-end<span class="category_count">3</span>
+      <button class="category_btn" data-filter="Front-end">
+        Frondt-end<span class="category_count">2</span>
       </button>
-      <button class="category_btn">
-        React <span class="category_count">3</span></button>
-      <button class="category_btn">Firebase<span class="category_count">2</span>
+      <button class="category_btn" data-filter="React">
+        React <span class="category_count">1</span>
+      </button>
+      <button class="category_btn" data-filter="Firebase">
+      Firebase<span class="category_count">1</span>
       </button>
     </div>
     <div class="work_projects">
       <a href="https://github.com/KimJeBu1/portfolio" 
       class="project"
-      target="blank">
+      target="blank"
+      data-type="Front-end">
     <img src="imgs/projects/project1.png" 
          alt="github"
          class="project__img"
@@ -217,7 +220,8 @@
       </a>
       <a href="https://github.com/KimJeBu1/portfolio" 
       class="project"
-      target="blank">
+      target="blank"
+      data-type="Front-end">
     <img src="imgs/projects/project2.png" 
          alt="github"
          class="project__img"
@@ -229,7 +233,8 @@
       </a>  
       <a href="https://github.com/KimJeBu1/portfolio" 
       class="project"
-      target="blank">
+      target="blank"
+      data-type="React">
     <img src="imgs/projects/project3.png" 
          alt="github"
          class="project__img"
@@ -241,7 +246,8 @@
       </a>
       <a href="https://github.com/KimJeBu1/portfolio" 
       class="project"
-      target="blank">
+      target="blank"
+      data-type="Firebase">
     <img src="imgs/projects/project4.png" 
          alt="github"
          class="project__img"
