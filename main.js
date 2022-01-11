@@ -20,14 +20,21 @@ navbarMenu.addEventListener('click', (event) => {
         return; //아무것도 하지 않음
     }
     // console.log(event.target.dataset.link);
+    navbarMenu.classList.remove('open');
     scrollIntoView(link)
-})
+});
+
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
 
 // Handle click on "contact me" button home
 const homeContactBtn = document.querySelector('.home_contact');
 homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact')
-})
+});
 
 //Make home slowly fade to transparent as window scrolls down
 const home = document.querySelector('.home_container');//querySelector로 home의 정보를 가져온다.
@@ -35,7 +42,7 @@ const home = document.querySelector('.home_container');//querySelector로 home�
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
-})
+});
 
 
 //Show "arrow up" button when scrolling down
@@ -52,6 +59,8 @@ document.addEventListener('scroll', ()=> {
 arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
+
+
 
 // Project
 const workBtnContainer = document.querySelector('.work_categories');
