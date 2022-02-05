@@ -22,6 +22,7 @@ navbarMenu.addEventListener('click', (event) => {
     // console.log(event.target.dataset.link);
     navbarMenu.classList.remove('open');
     scrollIntoView(link)
+    // selectedNavItem(target);
 });
 
 //Navbar toggle button for small screen
@@ -104,11 +105,6 @@ workBtnContainer.addEventListener('click', (e) => {
 //         console.log(project);
 //     }
 
-function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: "smooth"});
-}
-
 // //1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
 // const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 // const sections = sectionIds.map(id => document.querySelector(id));
@@ -180,6 +176,12 @@ const sectionIds = [
     selectedNavItem.classList.add('active');
   }
   
+  function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
   const observerOptions = {
     root: null,
     rootMargin: '0px',
