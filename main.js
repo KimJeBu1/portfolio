@@ -105,6 +105,7 @@ workBtnContainer.addEventListener('click', (e) => {
 //         console.log(project);
 //     }
 
+
 // //1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
 // const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
 // const sections = sectionIds.map(id => document.querySelector(id));
@@ -155,6 +156,11 @@ workBtnContainer.addEventListener('click', (e) => {
 //     selectNavItem(navItems[selectedNavItem]);
 // });
 
+
+//1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
+//2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+//3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다 
+
 const sectionIds = [
     '#home',
     '#about',
@@ -175,6 +181,12 @@ const sectionIds = [
     selectedNavItem = selected;
     selectedNavItem.classList.add('active');
   }
+
+  function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
   
   function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
@@ -205,16 +217,18 @@ const sectionIds = [
   
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   sections.forEach((section) => observer.observe(section));
-  
+ 
   window.addEventListener('wheel', () => {
     if (window.scrollY === 0) {
       selectedNavIndex = 0;
-    } else if (
-      window.scrollY + window.innerHeight ===
-      document.body.clientHeight
+    } else if (Math.round(window.scrollY + window.innerHeight) >=
+            document.body.clientHeight
     ) {
       selectedNavIndex = navItems.length - 1;
     }
     selectNavItem(navItems[selectedNavIndex]);
   });
 
+  
+
+  
